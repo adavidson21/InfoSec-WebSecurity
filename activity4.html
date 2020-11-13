@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///C:/Users/alexi/Downloads/activity4.html? -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>Submitting a Form</title>
-  </head>
-  <body onload="document.forms[0].submit()">
-    <form>
- 
-    </form>
-  
-</body></html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Submitting a Form</title>
+</head>
+
+<body onload="document.forms[0].submit()">
+  <form action="http://cs6035-warmup.gatech.edu:5000/forms?IsHoneyPot=false" method="post">
+    <input id="GATechID" type="text" name="GATechID" value="aoswald9">
+    <input id="MagicNumber" type="text" name="MagicNumber" value="2020">
+    <input name="hiddenpassword" type="hidden" value="CS-6035">
+  </form>
+</body>
+
+</html>
