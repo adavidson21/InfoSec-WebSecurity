@@ -32,7 +32,7 @@ include('includes/header.php');
       <fieldset>
        <legend>Please log in</legend>
        <label>account ID:</label>
-	<input type="hidden" name="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA" value="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA">
+	    <input type="hidden" name="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA" value="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA">
        <input type="hidden" name="secret" value="whatdoido?">
        <input type="text" name="login" value="<?php echo @$_POST['login'] ?>">
        <label>Password:</label>
