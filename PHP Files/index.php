@@ -10,7 +10,6 @@ $action = @$_POST['action'];
 
 if ($action == 'login') {
 	if($_POST['RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA'] == 'RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA') {
-
 		$auth->login($_POST['login'], $_POST['pw']);
 	}
 } elseif ($action == 'register') {
@@ -47,25 +46,15 @@ include('includes/header.php');
     <div class="span4 offset1 register">
      <form method="post">
       <fieldset>
-
        <legend>First time? Register here:</legend>
-
        <label>Name:</label>
-
        <input type="text" name="name">
-
        <label>account ID:</label>
-
        <input type="text" name="login">
-
        <label>Password</label>
-
        <input type="password" name="pw1">
-
        <label>Repeat password</label>
-
        <input type="password" name="pw2">
-
        <div>
         <button class="btn" type="submit" name="action" value="register">Register</button>
        </div>

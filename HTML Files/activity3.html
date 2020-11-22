@@ -5,6 +5,7 @@
 <body>
   <script>
     // add your url to launch an alert via XSS
+    // source: https://www.veracode.com/security/xss
     const url = "http://cs6035-warmup.gatech.edu:5000/tools/echo?payload=%3Cscript%3Ealert(%22cs6035%22)%3C/script%3E";
     window.location.href = url;
   </script>
