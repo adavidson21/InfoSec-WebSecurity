@@ -1,4 +1,4 @@
-# CS6035_Project3-Web_Security
+# Web Security Project
 
 ## Target 1 - CSRF/XSRF Attack
 
